@@ -14,14 +14,15 @@
 
 .PHONY:	build push
 
-IMAGE=kube-cross
+REGISTRY ?= harbor.ultra.com
+IMAGE ?= $(REGISTRY)/k8s/kube-cross
 TAG=$(shell cat VERSION)
 
 
 all: push
 
 build:
-	docker build --pull -t staging-k8s.gcr.io/$(IMAGE):$(TAG) .
-
+	docker build --pull -t $(IMAGE):$(TAG) .
+	
 push: build
-	docker push staging-k8s.gcr.io/$(IMAGE):$(TAG)
+	docker push $(IMAGE):$(TAG)

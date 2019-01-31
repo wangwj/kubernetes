@@ -14,7 +14,7 @@
 
 all: all-build
 
-REGISTRY ?= staging-k8s.gcr.io
+REGISTRY ?= harbor.ultra.com
 IMAGE ?= $(REGISTRY)/debian-base
 BUILD_IMAGE ?= debian-build
 
