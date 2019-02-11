@@ -29,7 +29,7 @@ import (
 const (
 	// When these values are updated, also update cmd/kubelet/app/options/container_runtime.go
 	// A copy of these values exist in test/utils/image/manifest.go
-	currentPodInfraContainerImageName    = "k8s.gcr.io/pause"
+	currentPodInfraContainerImageName    = "harbor.ultra.com/k8s/pause"
 	currentPodInfraContainerImageVersion = "3.1"
 )
 

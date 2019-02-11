@@ -15,16 +15,16 @@
 # Build the hyperkube base image. This image is used to build the hyperkube image.
 #
 # Usage:
-#   [ARCH=amd64] [REGISTRY="staging-k8s.gcr.io"] make (build|push)
+#   [ARCH=amd64] [REGISTRY="staging-harbor.ultra.com/k8s"] make (build|push)
 
-REGISTRY?=staging-k8s.gcr.io
+REGISTRY?=staging-harbor.ultra.com/k8s
 IMAGE?=$(REGISTRY)/debian-hyperkube-base
 TAG=0.12.0
 ARCH?=amd64
 ALL_ARCH = amd64 arm arm64 ppc64le s390x
 CACHEBUST?=1
 
-BASEIMAGE=k8s.gcr.io/debian-base-$(ARCH):0.4.0
+BASEIMAGE=harbor.ultra.com/k8s/debian-base-$(ARCH):0.4.0
 CNI_VERSION=v0.6.0
 
 TEMP_DIR:=$(shell mktemp -d)

@@ -117,7 +117,7 @@ kube::swagger::gen_api_ref_docs() {
       -v "${swagger_spec_path}":/swagger-source:z \
       -v "${register_file}":/register.go:z \
       --net=host -e "https_proxy=${KUBERNETES_HTTPS_PROXY:-}" \
-      k8s.gcr.io/gen-swagger-docs:v8 \
+      harbor.ultra.com/k8s/gen-swagger-docs:v8 \
       "${swagger_json_name}"
   done
 

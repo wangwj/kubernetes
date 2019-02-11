@@ -18,7 +18,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: nginx
-        image: k8s.gcr.io/nginx-slim:0.8
+        image: harbor.ultra.com/k8s/nginx-slim:0.8
         ports:
         - containerPort: 80
           name: web
@@ -27,7 +27,7 @@ spec:
         - -c
         - 'while true; do sleep 1; done'
       - name: pause
-        image: k8s.gcr.io/pause:2.0
+        image: harbor.ultra.com/k8s/pause:2.0
         ports:
         - containerPort: 81
           name: web-2

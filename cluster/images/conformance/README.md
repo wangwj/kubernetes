@@ -10,23 +10,23 @@
 $ build/run.sh make cross
 
 # Build for linux/amd64 (default)
-# export REGISTRY=$HOST/$ORG to switch from staging-k8s.gcr.io
+# export REGISTRY=$HOST/$ORG to switch from staging-harbor.ultra.com/k8s
 
 $ make push VERSION={target_version} ARCH=amd64
-# ---> staging-k8s.gcr.io/conformance-amd64:VERSION
-# ---> staging-k8s.gcr.io/conformance:VERSION (image with backwards-compatible naming)
+# ---> staging-harbor.ultra.com/k8s/conformance-amd64:VERSION
+# ---> staging-harbor.ultra.com/k8s/conformance:VERSION (image with backwards-compatible naming)
 
 $ make push VERSION={target_version} ARCH=arm
-# ---> staging-k8s.gcr.io/conformance-arm:VERSION
+# ---> staging-harbor.ultra.com/k8s/conformance-arm:VERSION
 
 $ make push VERSION={target_version} ARCH=arm64
-# ---> staging-k8s.gcr.io/conformance-arm64:VERSION
+# ---> staging-harbor.ultra.com/k8s/conformance-arm64:VERSION
 
 $ make push VERSION={target_version} ARCH=ppc64le
-# ---> staging-k8s.gcr.io/conformance-ppc64le:VERSION
+# ---> staging-harbor.ultra.com/k8s/conformance-ppc64le:VERSION
 
 $ make push VERSION={target_version} ARCH=s390x
-# ---> staging-k8s.gcr.io/conformance-s390x:VERSION
+# ---> staging-harbor.ultra.com/k8s/conformance-s390x:VERSION
 ```
 
 If you don't want to push the images, run `make` or `make build` instead
@@ -49,7 +49,7 @@ spec:
   containers:
   - name: conformance-container
     image: gcr.io/heptio-images/kube-conformance:latest
-    image: staging-k8s.gcr.io/conformance-amd64:v1.12.1
+    image: staging-harbor.ultra.com/k8s/conformance-amd64:v1.12.1
     imagePullPolicy: IfNotPresent
     env:
     - name: E2E_FOCUS

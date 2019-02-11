@@ -14,14 +14,14 @@
 
 .PHONY:	build push all all-build all-push-images all-push push-manifest
 
-REGISTRY?="staging-k8s.gcr.io"
+REGISTRY?="staging-harbor.ultra.com/k8s"
 IMAGE=$(REGISTRY)/debian-iptables
 TAG?=v11.0
 ARCH?=amd64
 ALL_ARCH = amd64 arm arm64 ppc64le s390x
 TEMP_DIR:=$(shell mktemp -d)
 
-BASEIMAGE?=k8s.gcr.io/debian-base-$(ARCH):0.4.0
+BASEIMAGE?=harbor.ultra.com/k8s/debian-base-$(ARCH):0.4.0
 
 # This option is for running docker manifest command
 export DOCKER_CLI_EXPERIMENTAL := enabled

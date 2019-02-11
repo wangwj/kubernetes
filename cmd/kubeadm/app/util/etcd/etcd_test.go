@@ -57,7 +57,7 @@ spec:
     - --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
     - --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt
     - --client-cert-auth=true
-    image: k8s.gcr.io/etcd-amd64:3.1.12
+    image: harbor.ultra.com/k8s/etcd-amd64:3.1.12
     livenessProbe:
       exec:
         command:
@@ -115,7 +115,7 @@ spec:
     - --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
     - --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt
     - --client-cert-auth=true
-    image: k8s.gcr.io/etcd-amd64:3.1.12
+    image: harbor.ultra.com/k8s/etcd-amd64:3.1.12
     livenessProbe:
       exec:
         command:

@@ -14,7 +14,7 @@
 
 .PHONY:	build push
 
-PREFIX = staging-k8s.gcr.io
+PREFIX = staging-harbor.ultra.com/k8s
 IMAGE = fluentd-elasticsearch
 TAG = v2.3.1
 

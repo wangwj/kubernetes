@@ -15,11 +15,11 @@
 # Build the etcd-version-monitor image
 #
 # Usage:
-# 	[GOLANG_VERSION=1.8.3] [REGISTRY=staging-k8s.gcr.io] [TAG=test] make (build|push)
+# 	[GOLANG_VERSION=1.8.3] [REGISTRY=staging-harbor.ultra.com/k8s] [TAG=test] make (build|push)
 # TODO(shyamjvs): Support architectures other than amd64 if needed.
 ARCH:=amd64
 GOLANG_VERSION?=1.8.3
-REGISTRY?=staging-k8s.gcr.io
+REGISTRY?=staging-harbor.ultra.com/k8s
 TAG?=0.1.2
 IMAGE:=$(REGISTRY)/etcd-version-monitor:$(TAG)
 CURRENT_DIR:=$(pwd)

@@ -66,7 +66,7 @@ spec:
     - --proxy-client-key-file=/etc/kubernetes/pki/front-proxy-client.key
     - --authorization-mode=Node,RBAC
     - --etcd-servers=http://127.0.0.1:2379
-    image: k8s.gcr.io/kube-apiserver-amd64:v1.7.4
+    image: harbor.ultra.com/k8s/kube-apiserver-amd64:v1.7.4
     livenessProbe:
       failureThreshold: 8
       httpGet:
@@ -153,7 +153,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP
-        image: k8s.gcr.io/kube-apiserver-amd64:v1.7.4
+        image: harbor.ultra.com/k8s/kube-apiserver-amd64:v1.7.4
         livenessProbe:
           failureThreshold: 8
           httpGet:
@@ -225,7 +225,7 @@ spec:
     - --cluster-signing-key-file=/etc/kubernetes/pki/ca.key
     - --address=127.0.0.1
     - --use-service-account-credentials=true
-    image: k8s.gcr.io/kube-controller-manager-amd64:v1.7.4
+    image: harbor.ultra.com/k8s/kube-controller-manager-amd64:v1.7.4
     livenessProbe:
       failureThreshold: 8
       httpGet:
@@ -300,7 +300,7 @@ spec:
         - --cluster-signing-key-file=/etc/kubernetes/pki/ca.key
         - --address=127.0.0.1
         - --use-service-account-credentials=true
-        image: k8s.gcr.io/kube-controller-manager-amd64:v1.7.4
+        image: harbor.ultra.com/k8s/kube-controller-manager-amd64:v1.7.4
         livenessProbe:
           failureThreshold: 8
           httpGet:
@@ -373,7 +373,7 @@ spec:
     - --leader-elect=true
     - --kubeconfig=/etc/kubernetes/scheduler.conf
     - --address=127.0.0.1
-    image: k8s.gcr.io/kube-scheduler-amd64:v1.7.4
+    image: harbor.ultra.com/k8s/kube-scheduler-amd64:v1.7.4
     livenessProbe:
       failureThreshold: 8
       httpGet:
@@ -424,7 +424,7 @@ spec:
         - --leader-elect=true
         - --kubeconfig=/etc/kubernetes/scheduler.conf
         - --address=127.0.0.1
-        image: k8s.gcr.io/kube-scheduler-amd64:v1.7.4
+        image: harbor.ultra.com/k8s/kube-scheduler-amd64:v1.7.4
         livenessProbe:
           failureThreshold: 8
           httpGet:
@@ -530,7 +530,7 @@ metadata:
   name: testpod
 spec:
   containers:
-    - image: k8s.gcr.io/busybox
+    - image: harbor.ultra.com/k8s/busybox
 `,
 			expectError: false,
 		},
@@ -546,7 +546,7 @@ spec:
   "spec": {
     "containers": [
       {
-        "image": "k8s.gcr.io/busybox"
+        "image": "harbor.ultra.com/k8s/busybox"
       }
     ]
   }
@@ -561,7 +561,7 @@ kind: Pod
 metadata:
   name: testpod
 spec:
-  - image: k8s.gcr.io/busybox
+  - image: harbor.ultra.com/k8s/busybox
 `,
 			expectError: true,
 		},

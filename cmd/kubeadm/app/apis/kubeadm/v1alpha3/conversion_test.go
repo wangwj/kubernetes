@@ -101,9 +101,9 @@ func TestConvertToUseHyperKubeImage(t *testing.T) {
 		{
 			desc: "matching UnifiedControlPlaneImage sets UseHyperKubeImage to true",
 			in: &ClusterConfiguration{
-				ImageRepository:          "k8s.gcr.io",
+				ImageRepository:          "harbor.ultra.com/k8s",
 				KubernetesVersion:        "v1.12.2",
-				UnifiedControlPlaneImage: "k8s.gcr.io/hyperkube:v1.12.2",
+				UnifiedControlPlaneImage: "harbor.ultra.com/k8s/hyperkube:v1.12.2",
 			},
 			useHyperKubeImage: true,
 			expectedErr:       false,
@@ -111,9 +111,9 @@ func TestConvertToUseHyperKubeImage(t *testing.T) {
 		{
 			desc: "mismatching UnifiedControlPlaneImage tag causes an error",
 			in: &ClusterConfiguration{
-				ImageRepository:          "k8s.gcr.io",
+				ImageRepository:          "harbor.ultra.com/k8s",
 				KubernetesVersion:        "v1.12.0",
-				UnifiedControlPlaneImage: "k8s.gcr.io/hyperkube:v1.12.2",
+				UnifiedControlPlaneImage: "harbor.ultra.com/k8s/hyperkube:v1.12.2",
 			},
 			expectedErr: true,
 		},
@@ -122,16 +122,16 @@ func TestConvertToUseHyperKubeImage(t *testing.T) {
 			in: &ClusterConfiguration{
 				ImageRepository:          "my.repo",
 				KubernetesVersion:        "v1.12.2",
-				UnifiedControlPlaneImage: "k8s.gcr.io/hyperkube:v1.12.2",
+				UnifiedControlPlaneImage: "harbor.ultra.com/k8s/hyperkube:v1.12.2",
 			},
 			expectedErr: true,
 		},
 		{
 			desc: "mismatching UnifiedControlPlaneImage image name causes an error",
 			in: &ClusterConfiguration{
-				ImageRepository:          "k8s.gcr.io",
+				ImageRepository:          "harbor.ultra.com/k8s",
 				KubernetesVersion:        "v1.12.2",
-				UnifiedControlPlaneImage: "k8s.gcr.io/otherimage:v1.12.2",
+				UnifiedControlPlaneImage: "harbor.ultra.com/k8s/otherimage:v1.12.2",
 			},
 			expectedErr: true,
 		},

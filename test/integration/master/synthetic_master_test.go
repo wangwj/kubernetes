@@ -393,7 +393,7 @@ var deploymentExtensions string = `
       "spec": {
         "containers": [{
           "name": "nginx",
-          "image": "k8s.gcr.io/nginx:1.7.9"
+          "image": "harbor.ultra.com/k8s/nginx:1.7.9"
         }]
       }
     }
@@ -420,7 +420,7 @@ var deploymentApps string = `
       "spec": {
         "containers": [{
           "name": "nginx",
-          "image": "k8s.gcr.io/nginx:1.7.9"
+          "image": "harbor.ultra.com/k8s/nginx:1.7.9"
         }]
       }
     }

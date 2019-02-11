@@ -40,7 +40,7 @@ dns:
 etcd:
   local:
     dataDir: /var/lib/etcd
-imageRepository: k8s.gcr.io
+imageRepository: harbor.ultra.com/k8s
 kind: ClusterConfiguration
 kubernetesVersion: v1.12.2
 networking:

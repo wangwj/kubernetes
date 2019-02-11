@@ -31,7 +31,7 @@ spec:
         operator: "Exists"
       containers:
         - name: influxdb
-          image: k8s.gcr.io/heapster-influxdb-amd64:v1.3.3
+          image: harbor.ultra.com/k8s/heapster-influxdb-amd64:v1.3.3
           resources:
             limits:
               cpu: 100m
@@ -48,7 +48,7 @@ spec:
           - name: influxdb-persistent-storage
             mountPath: /data
         - name: grafana
-          image: k8s.gcr.io/heapster-grafana-amd64:v4.4.3
+          image: harbor.ultra.com/k8s/heapster-grafana-amd64:v4.4.3
           env:
           resources:
             # keep request = limit to keep this container in guaranteed class

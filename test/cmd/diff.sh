@@ -33,7 +33,7 @@ run_kubectl_diff_tests() {
     kubectl apply -f hack/testdata/pod.yaml
 
     output_message=$(! kubectl diff -f hack/testdata/pod-changed.yaml)
-    kube::test::if_has_string "${output_message}" 'k8s.gcr.io/pause:3.0'
+    kube::test::if_has_string "${output_message}" 'harbor.ultra.com/k8s/pause:3.0'
 
     kubectl delete -f hack/testdata/pod.yaml
 

@@ -99,7 +99,7 @@ function create_cluster {
   --pid=host \
   --privileged=true \
   -d \
-  k8s.gcr.io/hyperkube-${arch}:${release} \
+  harbor.ultra.com/k8s/hyperkube-${arch}:${release} \
     /hyperkube kubelet \
       --containerized \
       --hostname-override="127.0.0.1" \

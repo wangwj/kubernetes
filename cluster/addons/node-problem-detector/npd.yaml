@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
       - name: node-problem-detector
-        image: k8s.gcr.io/node-problem-detector:v0.4.1
+        image: harbor.ultra.com/k8s/node-problem-detector:v0.4.1
         command:
         - "/bin/sh"
         - "-c"

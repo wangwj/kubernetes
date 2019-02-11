@@ -36,7 +36,7 @@ run_daemonset_tests() {
   # Template Generation should stay 1
   kube::test::get_object_assert 'daemonsets bind' "{{${template_generation_field}}}" '1'
   # Test set commands
-  kubectl set image daemonsets/bind "${kube_flags[@]}" *=k8s.gcr.io/pause:test-cmd
+  kubectl set image daemonsets/bind "${kube_flags[@]}" *=harbor.ultra.com/k8s/pause:test-cmd
   kube::test::get_object_assert 'daemonsets bind' "{{${template_generation_field}}}" '2'
   kubectl set env daemonsets/bind "${kube_flags[@]}" foo=bar
   kube::test::get_object_assert 'daemonsets bind' "{{${template_generation_field}}}" '3'
@@ -179,7 +179,7 @@ run_deployment_tests() {
   create_and_use_new_namespace
   kube::log::status "Testing deployments"
   # Test kubectl create deployment (using default - old generator)
-  kubectl create deployment test-nginx-extensions --image=k8s.gcr.io/nginx:test-cmd
+  kubectl create deployment test-nginx-extensions --image=harbor.ultra.com/k8s/nginx:test-cmd
   # Post-Condition: Deployment "nginx" is created.
   kube::test::get_object_assert 'deploy test-nginx-extensions' "{{$container_name_field}}" 'nginx'
   # and old generator was used, iow. old defaults are applied
@@ -194,7 +194,7 @@ run_deployment_tests() {
   kubectl delete deployment test-nginx-extensions "${kube_flags[@]}"
 
   # Test kubectl create deployment
-  kubectl create deployment test-nginx-apps --image=k8s.gcr.io/nginx:test-cmd --generator=deployment-basic/apps.v1beta1
+  kubectl create deployment test-nginx-apps --image=harbor.ultra.com/k8s/nginx:test-cmd --generator=deployment-basic/apps.v1beta1
   # Post-Condition: Deployment "nginx" is created.
   kube::test::get_object_assert 'deploy test-nginx-apps' "{{$container_name_field}}" 'nginx'
   # and new generator was used, iow. new defaults are applied
@@ -216,7 +216,7 @@ run_deployment_tests() {
   # Pre-Condition: No deployment exists.
   kube::test::get_object_assert deployment "{{range.items}}{{$id_field}}:{{end}}" ''
   # Command
-  kubectl create deployment nginx-with-command --image=k8s.gcr.io/nginx:test-cmd -- /bin/sleep infinity
+  kubectl create deployment nginx-with-command --image=harbor.ultra.com/k8s/nginx:test-cmd -- /bin/sleep infinity
   # Post-Condition: Deployment "nginx" is created.
   kube::test::get_object_assert 'deploy nginx-with-command' "{{$container_name_field}}" 'nginx'
   # Clean up
@@ -249,7 +249,7 @@ run_deployment_tests() {
   kube::test::get_object_assert deployment "{{range.items}}{{$id_field}}:{{end}}" ''
   kube::test::get_object_assert rs "{{range.items}}{{$id_field}}:{{end}}" ''
   # Create deployment
-  kubectl create deployment nginx-deployment --image=k8s.gcr.io/nginx:test-cmd
+  kubectl create deployment nginx-deployment --image=harbor.ultra.com/k8s/nginx:test-cmd
   # Wait for rs to come up.
   kube::test::wait_object_assert rs "{{range.items}}{{$rs_replicas_field}}{{end}}" '1'
   # Delete the deployment with cascade set to false.
@@ -599,7 +599,7 @@ run_rs_tests() {
   # Test set commands
   # Pre-condition: frontend replica set exists at generation 1
   kube::test::get_object_assert 'rs frontend' "{{${generation_field}}}" '1'
-  kubectl set image rs/frontend "${kube_flags[@]}" *=k8s.gcr.io/pause:test-cmd
+  kubectl set image rs/frontend "${kube_flags[@]}" *=harbor.ultra.com/k8s/pause:test-cmd
   kube::test::get_object_assert 'rs frontend' "{{${generation_field}}}" '2'
   kubectl set env rs/frontend "${kube_flags[@]}" foo=bar
   kube::test::get_object_assert 'rs frontend' "{{${generation_field}}}" '3'

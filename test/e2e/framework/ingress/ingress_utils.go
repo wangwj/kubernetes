@@ -915,7 +915,7 @@ func generateBacksideHTTPSDeploymentSpec() *extensions.Deployment {
 					Containers: []v1.Container{
 						{
 							Name:  "echoheaders-https",
-							Image: "k8s.gcr.io/echoserver:1.10",
+							Image: "harbor.ultra.com/k8s/echoserver:1.10",
 							Ports: []v1.ContainerPort{{
 								ContainerPort: 8443,
 								Name:          "echo-443",

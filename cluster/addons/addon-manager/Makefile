@@ -12,13 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-IMAGE=staging-k8s.gcr.io/kube-addon-manager
+IMAGE=staging-harbor.ultra.com/k8s/kube-addon-manager
 ARCH?=amd64
 TEMP_DIR:=$(shell mktemp -d)
 VERSION=v8.9
 KUBECTL_VERSION?=v1.11.3
 
-BASEIMAGE=k8s.gcr.io/debian-base-$(ARCH):0.4.0
+BASEIMAGE=harbor.ultra.com/k8s/debian-base-$(ARCH):0.4.0
 
 .PHONY: build push
 

@@ -11,7 +11,7 @@ container_image(
 
 container_bundle(
     name = "hyperkube",
-    images = {"k8s.gcr.io/hyperkube-amd64:{STABLE_DOCKER_TAG}": "hyperkube-internal"},
+    images = {"harbor.ultra.com/k8s/hyperkube-amd64:{STABLE_DOCKER_TAG}": "hyperkube-internal"},
     stamp = True,
 )
 

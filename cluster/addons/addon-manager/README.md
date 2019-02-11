@@ -39,20 +39,20 @@ The `addon-manager` is built for multiple architectures.
 ```console
 # Build for linux/amd64 (default)
 $ make push ARCH=amd64
-# ---> staging-k8s.gcr.io/kube-addon-manager-amd64:VERSION
-# ---> staging-k8s.gcr.io/kube-addon-manager:VERSION (image with backwards-compatible naming)
+# ---> staging-harbor.ultra.com/k8s/kube-addon-manager-amd64:VERSION
+# ---> staging-harbor.ultra.com/k8s/kube-addon-manager:VERSION (image with backwards-compatible naming)
 
 $ make push ARCH=arm
-# ---> staging-k8s.gcr.io/kube-addon-manager-arm:VERSION
+# ---> staging-harbor.ultra.com/k8s/kube-addon-manager-arm:VERSION
 
 $ make push ARCH=arm64
-# ---> staging-k8s.gcr.io/kube-addon-manager-arm64:VERSION
+# ---> staging-harbor.ultra.com/k8s/kube-addon-manager-arm64:VERSION
 
 $ make push ARCH=ppc64le
-# ---> staging-k8s.gcr.io/kube-addon-manager-ppc64le:VERSION
+# ---> staging-harbor.ultra.com/k8s/kube-addon-manager-ppc64le:VERSION
 
 $ make push ARCH=s390x
-# ---> staging-k8s.gcr.io/kube-addon-manager-s390x:VERSION
+# ---> staging-harbor.ultra.com/k8s/kube-addon-manager-s390x:VERSION
 ```
 
 If you don't want to push the images, run `make` or `make build` instead

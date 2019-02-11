@@ -112,7 +112,7 @@ spec:
           operator: "Exists"
       containers:
       - name: coredns
-        image: k8s.gcr.io/coredns:1.2.6
+        image: harbor.ultra.com/k8s/coredns:1.2.6
         imagePullPolicy: IfNotPresent
         resources:
           limits:

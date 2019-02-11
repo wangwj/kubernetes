@@ -187,7 +187,7 @@ limitations under the License.
 // 	etcd:
 // 	  # one of local or external
 // 	  local:
-// 	    image: "k8s.gcr.io/etcd-amd64:3.2.18"
+// 	    image: "harbor.ultra.com/k8s/etcd-amd64:3.2.18"
 // 	    dataDir: "/var/lib/etcd"
 // 	    extraArgs:
 // 	      listen-client-urls: "http://10.100.0.1:2379"
@@ -236,8 +236,8 @@ limitations under the License.
 // 	- "10.100.1.1"
 // 	- "ec2-10-100-0-1.compute-1.amazonaws.com"
 // 	certificatesDir: "/etc/kubernetes/pki"
-// 	imageRepository: "k8s.gcr.io"
-// 	unifiedControlPlaneImage: "k8s.gcr.io/controlplane:v1.12.0"
+// 	imageRepository: "harbor.ultra.com/k8s"
+// 	unifiedControlPlaneImage: "harbor.ultra.com/k8s/controlplane:v1.12.0"
 // 	auditPolicy:
 // 	  # https://kubernetes.io/docs/tasks/debug-application-cluster/audit/#audit-policy
 // 	  path: "/var/log/audit/audit.json"

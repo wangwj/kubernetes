@@ -792,8 +792,8 @@ function start_kubelet {
 
       # Build the hyperkube container image if necessary
       if [[ -z "$KUBELET_IMAGE" && -n "$DOCKERIZE_KUBELET" ]]; then
-        HYPERKUBE_BIN="${GO_OUT}/hyperkube" REGISTRY="k8s.gcr.io" VERSION="latest" make -C "${KUBE_ROOT}/cluster/images/hyperkube" build
-        KUBELET_IMAGE="k8s.gcr.io/hyperkube-amd64:latest"
+        HYPERKUBE_BIN="${GO_OUT}/hyperkube" REGISTRY="harbor.ultra.com/k8s" VERSION="latest" make -C "${KUBE_ROOT}/cluster/images/hyperkube" build
+        KUBELET_IMAGE="harbor.ultra.com/k8s/hyperkube-amd64:latest"
       fi
 
       # Docker won't run a container with a cidfile (container id file)

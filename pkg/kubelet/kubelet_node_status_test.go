@@ -109,7 +109,7 @@ func generateImageTags() []string {
 	// that kubelet report up to MaxNamesPerImageInNodeStatus tags.
 	count := rand.IntnRange(nodestatus.MaxNamesPerImageInNodeStatus+1, maxImageTagsForTest+1)
 	for ; count > 0; count-- {
-		tagList = append(tagList, "k8s.gcr.io:v"+strconv.Itoa(count))
+		tagList = append(tagList, "harbor.ultra.com/k8s:v"+strconv.Itoa(count))
 	}
 	return tagList
 }
@@ -476,11 +476,11 @@ func TestUpdateExistingNodeStatus(t *testing.T) {
 			// images will be sorted from max to min in node status.
 			Images: []v1.ContainerImage{
 				{
-					Names:     []string{"k8s.gcr.io:v1", "k8s.gcr.io:v2"},
+					Names:     []string{"harbor.ultra.com/k8s:v1", "harbor.ultra.com/k8s:v2"},
 					SizeBytes: 123,
 				},
 				{
-					Names:     []string{"k8s.gcr.io:v3", "k8s.gcr.io:v4"},
+					Names:     []string{"harbor.ultra.com/k8s:v3", "harbor.ultra.com/k8s:v4"},
 					SizeBytes: 456,
 				},
 			},
@@ -673,11 +673,11 @@ func TestUpdateNodeStatusWithRuntimeStateError(t *testing.T) {
 			},
 			Images: []v1.ContainerImage{
 				{
-					Names:     []string{"k8s.gcr.io:v1", "k8s.gcr.io:v2"},
+					Names:     []string{"harbor.ultra.com/k8s:v1", "harbor.ultra.com/k8s:v2"},
 					SizeBytes: 123,
 				},
 				{
-					Names:     []string{"k8s.gcr.io:v3", "k8s.gcr.io:v4"},
+					Names:     []string{"harbor.ultra.com/k8s:v3", "harbor.ultra.com/k8s:v4"},
 					SizeBytes: 456,
 				},
 			},
@@ -904,11 +904,11 @@ func TestUpdateNodeStatusWithLease(t *testing.T) {
 			// images will be sorted from max to min in node status.
 			Images: []v1.ContainerImage{
 				{
-					Names:     []string{"k8s.gcr.io:v1", "k8s.gcr.io:v2"},
+					Names:     []string{"harbor.ultra.com/k8s:v1", "harbor.ultra.com/k8s:v2"},
 					SizeBytes: 123,
 				},
 				{
-					Names:     []string{"k8s.gcr.io:v3", "k8s.gcr.io:v4"},
+					Names:     []string{"harbor.ultra.com/k8s:v3", "harbor.ultra.com/k8s:v4"},
 					SizeBytes: 456,
 				},
 			},

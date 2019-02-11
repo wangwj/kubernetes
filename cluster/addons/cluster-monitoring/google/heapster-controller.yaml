@@ -63,7 +63,7 @@ spec:
         supplementalGroups: [ 65534 ]
         fsGroup: 65534
       containers:
-        - image: k8s.gcr.io/heapster-amd64:v1.6.0-beta.1
+        - image: harbor.ultra.com/k8s/heapster-amd64:v1.6.0-beta.1
           name: heapster
           livenessProbe:
             httpGet:
@@ -76,13 +76,13 @@ spec:
             - /heapster
             - --source=kubernetes.summary_api:''
             - --sink=gcm
-        - image: k8s.gcr.io/heapster-amd64:v1.6.0-beta.1
+        - image: harbor.ultra.com/k8s/heapster-amd64:v1.6.0-beta.1
           name: eventer
           command:
             - /eventer
             - --source=kubernetes:''
             - --sink=gcl
-        - image: k8s.gcr.io/addon-resizer:1.8.4
+        - image: harbor.ultra.com/k8s/addon-resizer:1.8.4
           name: heapster-nanny
           resources:
             limits:
@@ -118,7 +118,7 @@ spec:
             # Specifies the smallest cluster (defined in number of nodes)
             # resources will be scaled to.
             - --minClusterSize={{ heapster_min_cluster_size }}
-        - image: k8s.gcr.io/addon-resizer:1.8.4
+        - image: harbor.ultra.com/k8s/addon-resizer:1.8.4
           name: eventer-nanny
           resources:
             limits:

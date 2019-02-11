@@ -64,7 +64,7 @@ DOCKERIZED_BINARIES = {
 [container_bundle(
     name = binary,
     images = {
-        "k8s.gcr.io/%s:{STABLE_DOCKER_TAG}" % binary: binary + "-internal",
+        "harbor.ultra.com/k8s/%s:{STABLE_DOCKER_TAG}" % binary: binary + "-internal",
     },
     stamp = True,
 ) for binary in DOCKERIZED_BINARIES.keys()]

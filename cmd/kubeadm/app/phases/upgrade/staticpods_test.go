@@ -74,7 +74,7 @@ etcd:
   local:
     dataDir: %s
     image: ""
-imageRepository: k8s.gcr.io
+imageRepository: harbor.ultra.com/k8s
 kubernetesVersion: %s
 networking:
   dnsDomain: cluster.local

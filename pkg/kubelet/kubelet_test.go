@@ -122,12 +122,12 @@ func newTestKubelet(t *testing.T, controllerAttachDetachEnabled bool) *TestKubel
 	imageList := []kubecontainer.Image{
 		{
 			ID:       "abc",
-			RepoTags: []string{"k8s.gcr.io:v1", "k8s.gcr.io:v2"},
+			RepoTags: []string{"harbor.ultra.com/k8s:v1", "harbor.ultra.com/k8s:v2"},
 			Size:     123,
 		},
 		{
 			ID:       "efg",
-			RepoTags: []string{"k8s.gcr.io:v3", "k8s.gcr.io:v4"},
+			RepoTags: []string{"harbor.ultra.com/k8s:v3", "harbor.ultra.com/k8s:v4"},
 			Size:     456,
 		},
 	}
@@ -138,12 +138,12 @@ func newTestKubeletWithoutFakeVolumePlugin(t *testing.T, controllerAttachDetachE
 	imageList := []kubecontainer.Image{
 		{
 			ID:       "abc",
-			RepoTags: []string{"k8s.gcr.io:v1", "k8s.gcr.io:v2"},
+			RepoTags: []string{"harbor.ultra.com/k8s:v1", "harbor.ultra.com/k8s:v2"},
 			Size:     123,
 		},
 		{
 			ID:       "efg",
-			RepoTags: []string{"k8s.gcr.io:v3", "k8s.gcr.io:v4"},
+			RepoTags: []string{"harbor.ultra.com/k8s:v3", "harbor.ultra.com/k8s:v4"},
 			Size:     456,
 		},
 	}

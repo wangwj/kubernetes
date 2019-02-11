@@ -9,7 +9,7 @@
       "containers": [
         {
           "name": "kubernetes-pause",
-          "image": "k8s.gcr.io/pause:3.1"
+          "image": "harbor.ultra.com/k8s/pause:3.1"
         }
       ],
       "restartPolicy": "Never",

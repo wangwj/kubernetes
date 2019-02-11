@@ -19,7 +19,7 @@
 #   REGISTRY=$VAR make
 # .. is not the same as:
 #   make REGISTRY=$VAR
-REGISTRY := $(if $(REGISTRY),$(REGISTRY),staging-k8s.gcr.io)
+REGISTRY := $(if $(REGISTRY),$(REGISTRY),staging-harbor.ultra.com/k8s)
 IMAGE_TAG := $(if $(IMAGE_TAG),$(IMAGE_TAG),latest)
 
 all: gcloudpush

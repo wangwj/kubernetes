@@ -182,7 +182,7 @@ Etcd:
     PeerCertSANs: null
     ServerCertSANs: null
 FeatureGates: null
-ImageRepository: k8s.gcr.io
+ImageRepository: harbor.ultra.com/k8s
 KubernetesVersion: v1.12.2
 LocalAPIEndpoint:
   AdvertiseAddress: 192.168.2.2

@@ -270,7 +270,7 @@ while true; do sleep 1; done
 				},
 				{
 					description: "should not be able to pull non-existing image from gcr.io",
-					image:       "k8s.gcr.io/invalid-image:invalid-tag",
+					image:       "harbor.ultra.com/k8s/invalid-image:invalid-tag",
 					phase:       v1.PodPending,
 					waiting:     true,
 				},

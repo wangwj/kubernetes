@@ -63,15 +63,15 @@ KUBELET_HEALTHZ_PORT=${KUBELET_HEALTHZ_PORT:-10248}
 CTLRMGR_PORT=${CTLRMGR_PORT:-10252}
 PROXY_HOST=127.0.0.1 # kubectl only serves on localhost.
 
-IMAGE_NGINX="k8s.gcr.io/nginx:1.7.9"
-IMAGE_DEPLOYMENT_R1="k8s.gcr.io/nginx:test-cmd"  # deployment-revision1.yaml
+IMAGE_NGINX="harbor.ultra.com/k8s/nginx:1.7.9"
+IMAGE_DEPLOYMENT_R1="harbor.ultra.com/k8s/nginx:test-cmd"  # deployment-revision1.yaml
 IMAGE_DEPLOYMENT_R2="$IMAGE_NGINX"  # deployment-revision2.yaml
-IMAGE_PERL="k8s.gcr.io/perl"
-IMAGE_PAUSE_V2="k8s.gcr.io/pause:2.0"
-IMAGE_DAEMONSET_R2="k8s.gcr.io/pause:latest"
-IMAGE_DAEMONSET_R2_2="k8s.gcr.io/nginx:test-cmd"  # rollingupdate-daemonset-rv2.yaml
-IMAGE_STATEFULSET_R1="k8s.gcr.io/nginx-slim:0.7"
-IMAGE_STATEFULSET_R2="k8s.gcr.io/nginx-slim:0.8"
+IMAGE_PERL="harbor.ultra.com/k8s/perl"
+IMAGE_PAUSE_V2="harbor.ultra.com/k8s/pause:2.0"
+IMAGE_DAEMONSET_R2="harbor.ultra.com/k8s/pause:latest"
+IMAGE_DAEMONSET_R2_2="harbor.ultra.com/k8s/nginx:test-cmd"  # rollingupdate-daemonset-rv2.yaml
+IMAGE_STATEFULSET_R1="harbor.ultra.com/k8s/nginx-slim:0.7"
+IMAGE_STATEFULSET_R2="harbor.ultra.com/k8s/nginx-slim:0.8"
 
 # Expose kubectl directly for readability
 PATH="${KUBE_OUTPUT_HOSTBIN}":$PATH

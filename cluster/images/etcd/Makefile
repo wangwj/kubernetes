@@ -15,7 +15,7 @@
 # Build the etcd image
 #
 # Usage:
-# 	[BUNDLED_ETCD_VERSIONS=2.2.1 2.3.7 3.0.17 3.1.12 3.2.24] [REGISTRY=k8s.gcr.io] [ARCH=amd64] [BASEIMAGE=busybox] make (build|push)
+# 	[BUNDLED_ETCD_VERSIONS=2.2.1 2.3.7 3.0.17 3.1.12 3.2.24] [REGISTRY=harbor.ultra.com/k8s] [ARCH=amd64] [BASEIMAGE=busybox] make (build|push)
 #
 # The image contains different etcd versions to simplify
 # upgrades. Thus be careful when removing any versions from here.
@@ -36,16 +36,16 @@ LATEST_ETCD_VERSION?=3.2.24
 # for each revision of this image at that etcd version.
 REVISION?=1
 
-# IMAGE_TAG Uniquely identifies k8s.gcr.io/etcd docker image with a tag of the form "<etcd-version>-<revision>".
+# IMAGE_TAG Uniquely identifies harbor.ultra.com/k8s/etcd docker image with a tag of the form "<etcd-version>-<revision>".
 IMAGE_TAG=$(LATEST_ETCD_VERSION)-$(REVISION)
 
 ARCH?=amd64
 ALL_ARCH = amd64 arm arm64 ppc64le s390x
-# Image should be pulled from k8s.gcr.io, which will auto-detect
+# Image should be pulled from harbor.ultra.com/k8s, which will auto-detect
 # region (us, eu, asia, ...) and pull from the closest.
-REGISTRY?=k8s.gcr.io
-# Images should be pushed to staging-k8s.gcr.io.
-PUSH_REGISTRY?=staging-k8s.gcr.io
+REGISTRY?=harbor.ultra.com/k8s
+# Images should be pushed to staging-harbor.ultra.com/k8s.
+PUSH_REGISTRY?=staging-harbor.ultra.com/k8s
 
 MANIFEST_IMAGE := $(PUSH_REGISTRY)/etcd
 
@@ -148,8 +148,8 @@ unit-test:
 	docker run --interactive -v $(shell pwd)/../../../:/go/src/k8s.io/kubernetes -e GOARCH=$(ARCH) golang:$(GOLANG_VERSION) \
 		/bin/bash -c "CGO_ENABLED=0 go test -v k8s.io/kubernetes/cluster/images/etcd/migrate"
 
-# Integration tests require both a golang build environment and all the etcd binaries from a `k8s.gcr.io/etcd` image (`/usr/local/bin/etcd-<version>`, ...).
-# Since the `k8s.gcr.io/etcd` image is for runtime only and does not have a build golang environment, we create a new docker image to run integration tests
+# Integration tests require both a golang build environment and all the etcd binaries from a `harbor.ultra.com/k8s/etcd` image (`/usr/local/bin/etcd-<version>`, ...).
+# Since the `harbor.ultra.com/k8s/etcd` image is for runtime only and does not have a build golang environment, we create a new docker image to run integration tests
 # with.
 build-integration-test-image: build
 	cp -r $(TEMP_DIR) $(TEMP_DIR)_integration_test

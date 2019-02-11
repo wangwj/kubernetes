@@ -27,7 +27,7 @@ import (
 
 const (
 	// When these values are updated, also update test/e2e/framework/util.go
-	defaultPodSandboxImageName    = "k8s.gcr.io/pause"
+	defaultPodSandboxImageName    = "harbor.ultra.com/k8s/pause"
 	defaultPodSandboxImageVersion = "3.1"
 )
 

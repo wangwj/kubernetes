@@ -24,4 +24,4 @@ spec:
               namespaces: []
       containers:
       - name: kubernetes-pause
-        image: k8s.gcr.io/pause:2.0
+        image: harbor.ultra.com/k8s/pause:2.0

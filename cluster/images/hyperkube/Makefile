@@ -15,14 +15,14 @@
 # Build the hyperkube image.
 #
 # Usage:
-#   [ARCH=amd64] [REGISTRY="staging-k8s.gcr.io"] make (build|push) VERSION={some_released_version_of_kubernetes}
+#   [ARCH=amd64] [REGISTRY="staging-harbor.ultra.com/k8s"] make (build|push) VERSION={some_released_version_of_kubernetes}
 
-REGISTRY?=staging-k8s.gcr.io
+REGISTRY?=staging-harbor.ultra.com/k8s
 ARCH?=amd64
 OUT_DIR?=_output
 HYPERKUBE_BIN?=$(shell pwd)/../../../$(OUT_DIR)/dockerized/bin/linux/$(ARCH)/hyperkube
 
-BASEIMAGE=k8s.gcr.io/debian-hyperkube-base-$(ARCH):0.12.0
+BASEIMAGE=harbor.ultra.com/k8s/debian-hyperkube-base-$(ARCH):0.12.0
 TEMP_DIR:=$(shell mktemp -d -t hyperkubeXXXXXX)
 
 all: build

@@ -134,7 +134,7 @@ func StackdriverExporterPod(podName, namespace, podLabel, metricName string, met
 func stackdriverExporterContainerSpec(name string, namespace string, metricName string, metricValue int64) corev1.Container {
 	return corev1.Container{
 		Name:            name,
-		Image:           "k8s.gcr.io/sd-dummy-exporter:v0.2.0",
+		Image:           "harbor.ultra.com/k8s/sd-dummy-exporter:v0.2.0",
 		ImagePullPolicy: corev1.PullPolicy("Always"),
 		Command: []string{
 			"/bin/sh",
@@ -203,7 +203,7 @@ func prometheusExporterPodSpec(metricName string, metricValue int64, port int32)
 		Containers: []corev1.Container{
 			{
 				Name:            "prometheus-exporter",
-				Image:           "k8s.gcr.io/prometheus-dummy-exporter:v0.1.0",
+				Image:           "harbor.ultra.com/k8s/prometheus-dummy-exporter:v0.1.0",
 				ImagePullPolicy: corev1.PullPolicy("Always"),
 				Command: []string{"/prometheus_dummy_exporter", "--metric-name=" + metricName,
 					fmt.Sprintf("--metric-value=%v", metricValue), fmt.Sprintf("=--port=%d", port)},
@@ -211,7 +211,7 @@ func prometheusExporterPodSpec(metricName string, metricValue int64, port int32)
 			},
 			{
 				Name:            "prometheus-to-sd",
-				Image:           "k8s.gcr.io/prometheus-to-sd:v0.3.1",
+				Image:           "harbor.ultra.com/k8s/prometheus-to-sd:v0.3.1",
 				ImagePullPolicy: corev1.PullPolicy("Always"),
 				Command: []string{"/monitor", fmt.Sprintf("--source=:http://localhost:%d", port),
 					"--stackdriver-prefix=custom.googleapis.com", "--pod-id=$(POD_ID)", "--namespace-id=$(POD_NAMESPACE)"},

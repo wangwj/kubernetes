@@ -15,11 +15,11 @@
 .PHONY:	build push
 
 ETCD_VERSION = 3.2.24
-# Image should be pulled from k8s.gcr.io, which will auto-detect
+# Image should be pulled from harbor.ultra.com/k8s, which will auto-detect
 # region (us, eu, asia, ...) and pull from the closest.
-REGISTRY = k8s.gcr.io
-# Images should be pushed to staging-k8s.gcr.io.
-PUSH_REGISTRY = staging-k8s.gcr.io
+REGISTRY = harbor.ultra.com/k8s
+# Images should be pushed to staging-harbor.ultra.com/k8s.
+PUSH_REGISTRY = staging-harbor.ultra.com/k8s
 TAG = 3.2.24.0
 
 clean:

@@ -59,7 +59,7 @@ func initReg() RegistryList {
 	registry := RegistryList{
 		DockerLibraryRegistry: "docker.io/library",
 		E2eRegistry:           "gcr.io/kubernetes-e2e-test-images",
-		GcRegistry:            "k8s.gcr.io",
+		GcRegistry:            "harbor.ultra.com/k8s",
 		PrivateRegistry:       "gcr.io/k8s-authenticated-test",
 		SampleRegistry:        "gcr.io/google-samples",
 	}
