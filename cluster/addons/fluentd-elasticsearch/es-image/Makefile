@@ -14,7 +14,7 @@
 
 .PHONY:	binary build push
 
-PREFIX = staging-harbor.ultra.com/k8s
+PREFIX = harbor.ultra.com/k8s
 IMAGE = elasticsearch
 TAG = v6.3.0
 

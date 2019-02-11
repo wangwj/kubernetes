@@ -14,7 +14,7 @@
 
 .PHONY:	build push all all-build all-push-images all-push push-manifest
 
-REGISTRY?="staging-harbor.ultra.com/k8s"
+REGISTRY?="harbor.ultra.com/k8s"
 IMAGE=$(REGISTRY)/debian-iptables
 TAG?=v11.0
 ARCH?=amd64

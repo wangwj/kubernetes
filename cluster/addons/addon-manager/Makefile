@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-IMAGE=staging-harbor.ultra.com/k8s/kube-addon-manager
+IMAGE=harbor.ultra.com/k8s/kube-addon-manager
 ARCH?=amd64
 TEMP_DIR:=$(shell mktemp -d)
 VERSION=v8.9

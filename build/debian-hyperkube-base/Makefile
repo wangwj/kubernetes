@@ -15,9 +15,9 @@
 # Build the hyperkube base image. This image is used to build the hyperkube image.
 #
 # Usage:
-#   [ARCH=amd64] [REGISTRY="staging-harbor.ultra.com/k8s"] make (build|push)
+#   [ARCH=amd64] [REGISTRY="harbor.ultra.com/k8s"] make (build|push)
 
-REGISTRY?=staging-harbor.ultra.com/k8s
+REGISTRY?=harbor.ultra.com/k8s
 IMAGE?=$(REGISTRY)/debian-hyperkube-base
 TAG=0.12.0
 ARCH?=amd64

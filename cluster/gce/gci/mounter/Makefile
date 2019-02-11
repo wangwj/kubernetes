@@ -13,7 +13,7 @@
 # limitations under the License.
 
 TAG=v2
-REGISTRY=staging-harbor.ultra.com/k8s
+REGISTRY=harbor.ultra.com/k8s
 IMAGE=gci-mounter
 
 all: container

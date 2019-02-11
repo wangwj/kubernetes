@@ -12,11 +12,11 @@ If you're editing the Dockerfile or some other thing, please bump the `TAG` in t
 ```console
 # Build and  push images for all the architectures
 $ make all-push
-# ---> staging-harbor.ultra.com/k8s/debian-hyperkube-base-amd64:TAG
-# ---> staging-harbor.ultra.com/k8s/debian-hyperkube-base-arm:TAG
-# ---> staging-harbor.ultra.com/k8s/debian-hyperkube-base-arm64:TAG
-# ---> staging-harbor.ultra.com/k8so/debian-hyperkube-base-ppc64le:TAG
-# ---> staging-harbor.ultra.com/k8s/debian-hyperkube-base-s390x:TAG
+# ---> harbor.ultra.com/k8s/debian-hyperkube-base-amd64:TAG
+# ---> harbor.ultra.com/k8s/debian-hyperkube-base-arm:TAG
+# ---> harbor.ultra.com/k8s/debian-hyperkube-base-arm64:TAG
+# ---> harbor.ultra.com/k8so/debian-hyperkube-base-ppc64le:TAG
+# ---> harbor.ultra.com/k8s/debian-hyperkube-base-s390x:TAG
 ```
 
 If you don't want to push the images, run `make all-build` instead

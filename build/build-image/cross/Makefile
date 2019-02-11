@@ -21,7 +21,7 @@ TAG=$(shell cat VERSION)
 all: push
 
 build:
-	docker build --pull -t staging-harbor.ultra.com/k8s/$(IMAGE):$(TAG) .
+	docker build --pull -t harbor.ultra.com/k8s/$(IMAGE):$(TAG) .
 
 push: build
-	docker push staging-harbor.ultra.com/k8s/$(IMAGE):$(TAG)
+	docker push harbor.ultra.com/k8s/$(IMAGE):$(TAG)

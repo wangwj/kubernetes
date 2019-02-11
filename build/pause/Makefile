@@ -16,7 +16,7 @@
 
 include ../../hack/make-rules/Makefile.manifest
 
-REGISTRY ?= staging-harbor.ultra.com/k8s
+REGISTRY ?= harbor.ultra.com/k8s
 IMAGE = $(REGISTRY)/pause
 IMAGE_WITH_ARCH = $(IMAGE)-$(ARCH)
 

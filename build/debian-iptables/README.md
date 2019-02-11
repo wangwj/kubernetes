@@ -11,11 +11,11 @@ If you're editing the Dockerfile or some other thing, please bump the `TAG` in t
 ```console
 Build and  push images for all the architectures
 $ make all-push
-# ---> staging-harbor.ultra.com/k8s/debian-iptables-amd64:TAG
-# ---> staging-harbor.ultra.com/k8s/debian-iptables-arm:TAG
-# ---> staging-harbor.ultra.com/k8s/debian-iptables-arm64:TAG
-# ---> staging-harbor.ultra.com/k8s/debian-iptables-ppc64le:TAG
-# ---> staging-harbor.ultra.com/k8s/debian-iptables-s390x:TAG
+# ---> harbor.ultra.com/k8s/debian-iptables-amd64:TAG
+# ---> harbor.ultra.com/k8s/debian-iptables-arm:TAG
+# ---> harbor.ultra.com/k8s/debian-iptables-arm64:TAG
+# ---> harbor.ultra.com/k8s/debian-iptables-ppc64le:TAG
+# ---> harbor.ultra.com/k8s/debian-iptables-s390x:TAG
 ```
 
 If you don't want to push the images, run `make build ARCH={target_arch}` or `make all-build` instead

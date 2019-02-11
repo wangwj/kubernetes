@@ -15,9 +15,9 @@
 # Build the conformance image.
 #
 # Usage:
-#   [ARCH=amd64] [REGISTRY="staging-harbor.ultra.com/k8s"] make (build|push) VERSION={some_released_version_of_kubernetes}
+#   [ARCH=amd64] [REGISTRY="harbor.ultra.com/k8s"] make (build|push) VERSION={some_released_version_of_kubernetes}
 
-REGISTRY?=staging-harbor.ultra.com/k8s
+REGISTRY?=harbor.ultra.com/k8s
 ARCH?=amd64
 OUT_DIR?=_output
 GINKGO_BIN?=$(shell pwd)/../../../$(OUT_DIR)/dockerized/bin/linux/$(ARCH)/ginkgo

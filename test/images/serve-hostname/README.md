@@ -15,19 +15,19 @@ $ make all-push
 
 # Build for linux/amd64 (default)
 $ make push ARCH=amd64
-# ---> staging-harbor.ultra.com/k8s/serve_hostname-amd64:TAG
+# ---> harbor.ultra.com/k8s/serve_hostname-amd64:TAG
 
 $ make push ARCH=arm
-# ---> staging-harbor.ultra.com/k8s/serve_hostname-arm:TAG
+# ---> harbor.ultra.com/k8s/serve_hostname-arm:TAG
 
 $ make push ARCH=arm64
-# ---> staging-harbor.ultra.com/k8s/serve_hostname-arm64:TAG
+# ---> harbor.ultra.com/k8s/serve_hostname-arm64:TAG
 
 $ make push ARCH=ppc64le
-# ---> staging-harbor.ultra.com/k8s/serve_hostname-ppc64le:TAG
+# ---> harbor.ultra.com/k8s/serve_hostname-ppc64le:TAG
 
 $ make push ARCH=s390x
-# ---> staging-harbor.ultra.com/k8s/serve_hostname-s390x:TAG
+# ---> harbor.ultra.com/k8s/serve_hostname-s390x:TAG
 ```
 
 Of course, if you don't want to push the images, run `make all-container` or `make container ARCH={target_arch}` instead.

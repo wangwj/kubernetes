@@ -44,8 +44,8 @@ ALL_ARCH = amd64 arm arm64 ppc64le s390x
 # Image should be pulled from harbor.ultra.com/k8s, which will auto-detect
 # region (us, eu, asia, ...) and pull from the closest.
 REGISTRY?=harbor.ultra.com/k8s
-# Images should be pushed to staging-harbor.ultra.com/k8s.
-PUSH_REGISTRY?=staging-harbor.ultra.com/k8s
+# Images should be pushed to harbor.ultra.com/k8s.
+PUSH_REGISTRY?=harbor.ultra.com/k8s
 
 MANIFEST_IMAGE := $(PUSH_REGISTRY)/etcd
 
